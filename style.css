@@ -1,0 +1,437 @@
+/* VARIABLES IN THE ROOT SCOPE */
+:root {
+  --primary-gray-dark: #3d4f5d;
+  --primary-gray-light: #7692ad;
+
+  --secondary-gray-background: rgb(246, 249, 254);
+}
+/*        GENERAL     */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* above we have our reset when we have the border-box sizing it means that padding doesnt affect width of any elements  */
+}
+html,
+body {
+  background: var(--secondary-gray-background);
+  font-family: 'Poppins', sans-serif;
+  color: rgb(61, 66, 68);
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+p,
+a {
+  font-size: 1.4rem;
+  margin: 2rem 0;
+}
+/*        BTN     */
+.btn {
+  background: var(--primary-gray-dark);
+  font-size: 1.6rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  margin: 1rem 0;
+  display: inline-block;
+  transition: all 0.3s;
+  border: 0;
+}
+
+.btn:hover {
+  background: var(--primary-gray-light);
+  transform: scale(0.98);
+}
+
+/*        LOGO     */
+.logo {
+  position: absolute;
+  top: 3rem;
+  left: 10rem;
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 10;
+  color: var(--primary-gray-light);
+}
+/*        TOGGLE     */
+
+.toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5rem;
+  height: 5rem;
+  background: var(--primary-gray-light) url(./images/menu.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 3rem;
+  z-index: 100;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.toggle:hover {
+  background: var(--primary-gray-dark) url(./images/menu.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 3rem;
+  z-index: 100;
+  transform: scale(0.97);
+
+  cursor: pointer;
+}
+
+.toggle.active {
+  background: var(--primary-gray-light) url(./images/close.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.2rem;
+  transition: all 0.4s;
+}
+.toggle.active:hover {
+  background: var(--primary-gray-dark) url(./images/close.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.2rem;
+  transform: scale(0.97);
+}
+
+/*        NAVIGATION     */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-gray-background);
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation.active {
+  left: 0;
+}
+
+.navigation ul {
+  position: relative;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  text-align: center;
+}
+
+.navigation ul li a {
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: var(--primary-gray-dark);
+  transition: all 0.4s;
+}
+
+.navigation ul li a:hover {
+  font-weight: 500;
+  color: var(--primary-gray-light);
+}
+
+.navigation .social-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 6rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation .social-bar a {
+  display: inline-block;
+  transform: scale(0.5);
+}
+.navigation .email-icon {
+  position: absolute;
+  bottom: 2rem;
+}
+/*        SECTION     */
+section {
+  display: flex;
+  flex-direction: column;
+  /* to align it verticaly we need to add height */
+  height: 100vh;
+  align-items: center;
+  padding: 10rem;
+  margin-top: 6rem;
+}
+
+section.home {
+  flex-direction: row;
+  margin-top: 0rem;
+}
+
+.home-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* to fit/adapt it to height of the browser */
+  height: 110%;
+}
+.home-content {
+  position: relative;
+  z-index: 10;
+  max-width: 50%;
+}
+
+/* SERVICES HTML */
+.services {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  text-align: center;
+}
+
+.services .service {
+  padding: 3rem;
+  transition: box-shadow 0.5s;
+}
+/* shadow effect */
+.services .service:hover {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+.services .service h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  color: var(--primary-gray-dark);
+}
+.services .service .icon img {
+  max-width: 10rem;
+}
+
+/* WORK PAGE */
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.portfolio .item {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  margin: 1rem;
+}
+
+.portfolio .item img {
+  width: 100%;
+  height: 100%;
+}
+
+/* hover effect */
+.portfolio .item .action {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.portfolio .item:hover .action {
+  opacity: 1;
+}
+
+.portfolio .item .action a {
+  font-size: 2rem;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 0.5rem 1.5rem;
+}
+
+/* CONTACT CLASS */
+
+.contact {
+  position: relative;
+  width: 100%;
+  margin-top: 5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-form {
+  position: relative;
+  background: var(--primary-gray-light);
+  width: calc(100% - 40rem);
+  padding: 6rem 4rem 2rem;
+}
+.contact-form form {
+  width: 100%;
+}
+
+.contact-form .row {
+  width: 100%;
+  display: flex;
+}
+
+.contact-form .input50 {
+  width: 50%;
+  margin: 0 1rem;
+}
+
+.contact-form .input100 {
+  width: 100%;
+  margin: 0 1rem;
+}
+
+.contact-form .row input,
+.contact-form .row textarea {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #111;
+  background: var(--secondary-gray-background);
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 1rem 0;
+  /* not able to resize the textarea */
+  resize: none;
+}
+
+.contact-form .row textarea {
+  height: 15rem;
+}
+
+.contact-form .row input[type='submit'] {
+  background-color: var(--primary-gray-dark);
+  color: var(--secondary-gray-background);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  border: 0;
+  cursor: pointer;
+}
+
+.contact-info {
+  width: 35rem;
+  background: var(--primary-gray-light);
+  padding: 6rem 4rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info .info-box {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.contact-info .info-box .contact-icon {
+  width: 2rem;
+  margin-right: 4rem;
+}
+
+.contact-info .info-box .details h4 {
+  color: var(--secondary-gray-background);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.contact-info .info-box .details a,
+.contact-info .info-box .details p {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--primary-gray-dark);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+/* MEDIA QUERY */
+/* all below 1068px is gonna be applied, he used 1068px */
+@media (max-width: 1068px) {
+  .home-img {
+    display: none;
+  }
+
+  .logo {
+    top: 1rem;
+    left: 4rem;
+    font-size: 1.8rem;
+  }
+
+  .home-content {
+    max-width: 90%;
+  }
+
+  section {
+    padding: 10rem 5rem;
+  }
+
+  .navigation ul li a {
+    font-size: 2rem;
+  }
+
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 3rem 3rem 2rem;
+  }
+
+  .contact-form .row {
+    flex-direction: column;
+  }
+
+  .contact-form .input50,
+  .contact-form .input100 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .contact-info {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 3rem 3rem 2rem;
+  }
+}
+
+@media (max-width: 668px) {
+  .services {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .services .service {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  }
+} ;
