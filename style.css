@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* above we have our reset when we have the border-box sizing it means that padding doesnt affect width of any elements  */
+ 
 }
 html,
 body {
@@ -370,7 +370,7 @@ section.home {
 }
 
 /* MEDIA QUERY */
-/* all below 1068px is gonna be applied, he used 1068px */
+
 @media (max-width: 1068px) {
   .home-img {
     display: none;
